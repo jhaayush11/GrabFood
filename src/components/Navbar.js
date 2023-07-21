@@ -15,12 +15,12 @@ export default function Navbar() {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light text-light position-relative"
-      style={{ "background-color": "rgb(14 194 75)" }}
+      style={{ "background-color": "#ff7a00" }}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand fs-3" to="/">
+        <Link className="navbar-brand fs-2" to="/">
           <em>
-            <b>GrabFood</b>
+            <b>ɢʀǟɮʄօօɖ</b>
           </em>
         </Link>
         <button
@@ -35,7 +35,7 @@ export default function Navbar() {
           <span className="navbar-toggler-icon "></span>
         </button>
         <div className="collapse navbar-collapse " id="navbarNav">
-          <ul className=" navbar-nav me-auto mb-2">
+          <ul className=" navbar-nav me-auto mb-1">
             <li className="nav-item mx-3 fs-7 ">
               <Link
                 className="nav-Link text-decoration-none text-light fs-5 active"
@@ -53,12 +53,14 @@ export default function Navbar() {
                 About Us
               </Link>
             </li>
-            <li className="nav-item mx-3 fs-7">
+            <li>
               <Link
-                className="nav-Link text-decoration-none text-light fs-5"
-                to="/"
+                className="nav-Link text-decoration-none text-light fs-5 fw-bold"
+                // style={{ color: "white" }}
+                to="/offers"
               >
-                Our Specialities<p className="d-inline">🤩</p>
+                Offer$
+                {/* <p className="d-inline">&#127881;</p> */}
               </Link>
             </li>
             {localStorage.getItem("authToken") ? (
@@ -89,8 +91,11 @@ export default function Navbar() {
           ) : (
             <div className="d-flex ">
               {/* <div> </div> */}
-              <div className="text-dark fw-bold mx-4 fs-5 mt-2">
-                Hello, {localStorage.getItem("userName")}
+              <div className="d-flex text-dark fw-bold mx-4 fs-5 mt-2">
+                Hello,{" "}
+                <p className="text-light mx-1">
+                  {localStorage.getItem("userName")}
+                </p>
               </div>
               <Link>
                 <img
@@ -115,8 +120,8 @@ export default function Navbar() {
                 ) : null}
               </Link>
               <div
-                  className="btn text-decoration-none fs-5 mx-3 fw-bold"
-                  style={{"color":"red"}}
+                className="btn text-decoration-none fs-5 mx-3 fw-bold"
+                style={{ color: "black" }}
                 onClick={handleLogout}
               >
                 Logout
